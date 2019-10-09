@@ -5,6 +5,9 @@
  **/
 
 @import "bugo-navigation-vars";
+@debug "Loading Bugo Navigation Module SASS";
+@import "custom-variables";
+
 
 nav {
   li {
