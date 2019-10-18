@@ -6,7 +6,7 @@
 
 @import "bugo-navigation-vars";
 @debug "Loading Bugo Navigation Module SASS";
-@import "custom-variables";
+// @import "custom-variables";
 
 
 nav {
@@ -76,9 +76,18 @@ nav {
       position: absolute;
       bottom: 100%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) rotate(90deg);
     }
 
+    ul {
+      li {
+        margin-bottom: ms(0);
+        a {
+          white-space: normal;
+          line-height: 1.1;
+        }
+      }
+    }
 
     .dropdown-menu {
       z-index: 200;
@@ -98,14 +107,6 @@ nav {
         border-right: 1rem solid lighten($dropdown-bg,20%) !important;
         border-bottom: 0.5rem solid transparent !important;
         border-left: none;
-      }
-
-      ul {
-        li {
-          a {
-            white-space: normal;
-          }
-        }
       }
     }
 
