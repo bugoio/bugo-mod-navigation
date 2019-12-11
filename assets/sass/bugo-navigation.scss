@@ -5,16 +5,16 @@
  **/
 
 @import "bugo-navigation-vars";
+@import "bugo-nav-wcag-menubar";
+@import "bugo-nav-wcag-tree";
 @debug "Loading Bugo Navigation Module SASS";
 // @import "custom-variables";
 
 
 nav {
-  li {
-    a {
-      display: block;
-      text-decoration: none;
-    }
+  a {
+    display: block;
+    text-decoration: none;
   }
 }
 
@@ -27,6 +27,7 @@ nav {
   ul {
     display: flex;
     margin: 0;
+    padding: 0;
 
     li {
       position: relative;
@@ -34,9 +35,6 @@ nav {
 
       &.current {
         font-weight: bold;
-      }
-
-      a {
       }
     }
   }
@@ -81,7 +79,8 @@ nav {
 
     ul {
       li {
-        margin-bottom: ms(0);
+        @include ms-respond(margin-bottom,0);
+
         a {
           white-space: normal;
           line-height: 1.1;
@@ -94,7 +93,7 @@ nav {
       top: -0.5rem;
       left: calc(100% + 1.5rem);
       right: auto;
-      transform: none !important;
+      transform: none;
       background-color: lighten($dropdown-bg,20%);
 
       &::before {
@@ -215,5 +214,11 @@ nav {
         }
       }
     }
+  }
+}
+
+.nav-link-container {
+  ul {
+    display: block;
   }
 }

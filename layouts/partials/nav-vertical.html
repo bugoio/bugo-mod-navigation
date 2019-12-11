@@ -26,9 +26,11 @@
       </div>
       {{ else }}
       <a
-        title="{{ .Name }}"
-        aria-label="{{ .Name }}"
-        class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }} $page {{ $menuItem.Name | urlize }}" href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} target="new" {{ end }}>
+        aria-label="{{ $menuItem.Name }}"
+        class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }} $page {{ $menuItem.Name | urlize }}"
+        href="{{ .URL }}"
+        {{ if or ( in .URL "http://" ) (in .URL "https://" )}} target="new" {{ end }}
+        >
         {{ $menuItem.Pre }}
         {{ $menuItem.Name }}
         {{ $menuItem.Post }}
