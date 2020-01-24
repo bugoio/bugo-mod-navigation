@@ -12,14 +12,13 @@
     {{ range $index, $menuItem := .Scratch.Get "menu" }}
       <li class="{{ if .HasChildren }}nested {{ end }}{{ if $currentPage.IsMenuCurrent $location . }}current{{ end }}{{ if $currentPage.HasMenuCurrent $location . }}current{{ end }}">
       {{ if $menuItem.HasChildren }}
-        {{ partial "components/dropdown" ( dict "currentPage" $currentPage "menuItem" $menuItem "location" $location "hasParent" false) }}
+        {{ partial "nav-dropdown" ( dict "currentPage" $currentPage "menuItem" $menuItem "location" $location "hasParent" false) }}
       {{ else }}
       <a class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }} $page {{ $menuItem.Name | urlize }}"
         href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}}
         target="new" {{ end }}
         tabindex="0"
-        title="{{ .Name  | title }}"
-        aria-label="{{ .Name  | title }}"
+        aria-label="{{ $menuItem.Name  | title }}"
       >
         {{ $menuItem.Pre }}
         {{ $menuItem.Name | title }}

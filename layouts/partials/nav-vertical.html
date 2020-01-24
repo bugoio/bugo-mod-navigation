@@ -14,7 +14,7 @@
       <a
         title="{{ .Name }}"
         aria-label="{{ .Name }}"
-        class="nav-link dropdown-trigger $page {{ $menuItem.Name | urlize }} {{if or ($currentPage.IsMenuCurrent $location .) ($currentPage.HasMenuCurrent $location .) }} current{{end}}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+        class="nav-link dropdown-trigger $page {{ $menuItem.Name | urlize }}-link {{if or ($currentPage.IsMenuCurrent $location .) ($currentPage.HasMenuCurrent $location .) }} current{{end}}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
         {{ $menuItem.Pre }}
         {{ $menuItem.Name }}
         {{ $menuItem.Post }}
@@ -26,9 +26,11 @@
       </div>
       {{ else }}
       <a
-        title="{{ .Name }}"
-        aria-label="{{ .Name }}"
-        class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }} $page {{ $menuItem.Name | urlize }}" href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} target="new" {{ end }}>
+        aria-label="{{ $menuItem.Name }}"
+        class="nav-link {{ $menuItem.Name | urlize }}-link"
+        href="{{ .URL }}"
+        {{ if or ( in .URL "http://" ) (in .URL "https://" )}} target="new" {{ end }}
+        >
         {{ $menuItem.Pre }}
         {{ $menuItem.Name }}
         {{ $menuItem.Post }}
