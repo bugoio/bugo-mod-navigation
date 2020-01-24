@@ -4,8 +4,11 @@ $(document).ready(function(){
     document.menus = document. querySelectorAll ("[role=menubar]");
     ////console.log(document.menus);
   }
-  var menubar = new Menubar(document.getElementById('menubar-main'));
-  menubar.init();
+  if($menu = document.getElementById('menubar-main')){
+    var menubar = new Menubar($menu);
+    menubar.init();
+  }
+  
 
   $('.skip-link').on('click',function(){
     var target = $(this).attr("href");

@@ -23,6 +23,7 @@
             aria-haspopup="true"
             aria-expanded="false"
             {{ end }}
+            class="{{ if or ( $currentPage.HasMenuCurrent "main" . ) ( $currentPage.IsMenuCurrent $location . ) }}current{{ end }}"
         >
         {{ $menuItem.Pre }}
         {{ $menuItem.Name | title }}

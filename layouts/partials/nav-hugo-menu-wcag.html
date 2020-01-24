@@ -21,6 +21,7 @@
         aria-haspopup="true"
         aria-expanded="false"
         {{ end }}
+        class="{{ if $currentPage.IsMenuCurrent $location . }}current{{ end }}"
       >
         {{ .Pre }}
         {{ .Name  | title }}

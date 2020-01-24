@@ -30,20 +30,19 @@ ul[role="tree"] a {
 }
 
 [role="treeitem"][aria-expanded="false"] > span::before {
-  content: url(../images/right-arrow-brown.png);
+  // content: url(../images/right-arrow-brown.png);
   position: relative;
   left: -0.25em;
 }
 
 [role="treeitem"][aria-expanded="true"] > span::before {
-  content: url(../images/down-arrow-brown.png);
+  // content: url(../images/down-arrow-brown.png);
   position: relative;
   left: -0.25em;
 }
 
 [role="treeitem"],
 [role="treeitem"] span {
-  width: 16em;
   margin: 0;
   padding: 0.125em;
   border: 2px transparent solid;
