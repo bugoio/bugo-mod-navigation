@@ -15,7 +15,7 @@
     <li role="none">
       <a
         role="menuitem"
-        href="{{ index $url 0 }}"
+        href="{{ index $url 0 | absURL }}"
         tabindex="0"
         {{ if .HasChildren }}
         aria-haspopup="true"
